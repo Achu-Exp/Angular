@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { BootstrapCard } from '../../interface/bottstrap-card.components';
 import { MyButtonComponent } from "../my-button/my-button.component";
 
 @Component({

@@ -12,5 +12,6 @@ import { CaroselofcardsComponent } from "./ui/caroselofcards/caroselofcards.comp
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  title:string= 'Angular';
 
 }

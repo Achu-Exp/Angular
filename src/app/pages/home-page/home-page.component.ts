@@ -1,16 +1,54 @@
 import { Component } from '@angular/core';
-import { MyButtonComponent } from '../my-button/my-button.component';
-import { CommonModule } from '@angular/common';
+import { MyCaroselComponent } from "../../ui/my-carosel/my-carosel.component";
+import { MyDescriptionComponent } from "../../ui/my-description/my-description.component";
+import { CaroselofcardsComponent } from "../../ui/caroselofcards/caroselofcards.component";
+import { BootstrapCard, BootstrapCarosel } from '../../interface/bottstrap-card.components';
+import { CardComponent } from "../../ui/card/card.component";
 
 @Component({
-  selector: 'app-my-card',
+  selector: 'app-home-page',
   standalone: true,
-  imports: [MyButtonComponent,CommonModule],
-  templateUrl: './my-card.component.html',
-  styleUrl: './my-card.component.scss'
+  imports: [MyCaroselComponent, MyDescriptionComponent, CaroselofcardsComponent, CardComponent],
+  templateUrl: './home-page.component.html',
+  styleUrl: './home-page.component.scss'
 })
-export class MyCardComponent {
-  districtList =[
+export class HomePageComponent {
+  item:BootstrapCarosel[] = [
+    {
+      id: 1,
+      image: 'images/kerala1.avif',
+    },
+    {
+      id: 2,
+      image: 'images/kerala2.jpg',
+    },
+    {
+      id: 3,
+      image: 'images/kerala.jpg',
+    },
+    {
+      id: 4,
+      image: 'images/2.jpg',
+    },
+    {
+      id: 5,
+      image: 'images/3.jpg',
+    },
+    {
+      id: 6,
+      image: 'images/kerala-family-celebrating.avif',
+    },
+    {
+      id: 7,
+      image: 'images/KeralaTheyyam 1.jpg',
+    },
+  ];
+
+
+
+
+
+  districtList:BootstrapCard[] =[
     {
       id:1,
       name:'Thiruvananthapuram',
@@ -98,30 +136,4 @@ export class MyCardComponent {
     },
 
  ];
- trackById(index: number, item: any): number {
-  return item.id;
 }
-
-scrollLeft() {
-  const container = document.querySelector('.card-container') as HTMLElement;
-  if (container) {
-    if (container.scrollLeft === 0) {
-      container.scrollLeft = container.scrollWidth;
-    } else {
-      container.scrollLeft -= container.clientWidth;
-    }
-  }
-}
-
-scrollRight() {
-  const container = document.querySelector('.card-container') as HTMLElement;
-  if (container) {
-    if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
-      container.scrollLeft = 0;
-    } else {
-      container.scrollLeft += container.clientWidth;
-    }
-  }
-}
-}
-

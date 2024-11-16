@@ -1,11 +1,11 @@
 
 <div class="card-container">
-  <div class="card" style="width: 18rem;">
-    <img src={{image}} class="card-img-top" alt="..." />
+  <div class="card" style="width: 18rem;" [ngClass]="{'bordered': showBorder}">
+    <img src={{data.image}} class="card-img-top" alt="..." />
     <div class="card-body">
-      <h5 class="card-title">{{ title }}</h5>
-      <p class="card-text">{{ description }}</p>
-      <app-my-button class="btn" title="Know more"></app-my-button>
+      <h5 class="card-title">{{ data.title | slice:0:20}}...</h5>
+      <p class="card-text">{{ data.description | slice:0:60 }}...</p>
+      <a class="btn btn-dark" title="Know more"  [routerLink]="routeLink">Know More</a>
     </div>
   </div>
 </div>

@@ -1,0 +1,54 @@
+<div class="Registration-form">
+
+
+  <form class="container" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="row text-center mb-5">
+      <h1 class="col-12" style="text-align: center;">Register</h1>
+
+    </div>
+    <div class="row g-10">
+      <input class="form-control col" placeholder="First name" formControlName="firstName" />
+      <input class="form-control col" placeholder="Last name" formControlName="lastName" />
+
+    </div>
+    <div class="row">
+      <input class="form-control col" placeholder="Email" formControlName="email" />
+      <input class="form-control col" placeholder="Phone" formControlName="phonenumber" />
+
+    </div>
+    <div class="row">
+
+
+        <select class="form-select col" aria-label="Default select example" formControlName="gender">
+          <option value="" disabled selected> Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Others">Others</option>
+        </select>
+
+
+      <input class="form-control col" type="date" placeholder="Dob" formControlName="dob" />
+
+    </div>
+    <div class="row">
+      <input class="form-control col" placeholder="Address" formControlName="address" />
+
+    </div>
+    <div class="row">
+      <input (keyup)="pinCheck()" class="form-control col" placeholder="pincode" formControlName="pincode" />
+      <input class="form-control col" placeholder="City" formControlName="city" />
+
+    </div>
+    <div class="row">
+      <input class="form-control col" placeholder="District" formControlName="district" />
+      <input class="form-control col" placeholder="State" formControlName="state">
+    </div>
+
+    <div class="row">
+      <input class="form-control col" type="password" placeholder="Password" formControlName="password" />
+      <input class="form-control col" type="password" placeholder="Repeat password" formControlName="repassword" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">Register</button>
+  </form>
+</div>

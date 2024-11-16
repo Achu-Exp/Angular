@@ -1,15 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { MyButtonComponent } from "../my-button/my-button.component";
+import { NgClass, SlicePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [MyButtonComponent],
+  imports: [SlicePipe,NgClass,RouterLink],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input() image!: string;
-  @Input() title!: string;
-  @Input() description!: string;
+  @Input() data:any;
+  @Input() showBorder: boolean = false;
+  @Input() routeLink: string = '';
 }

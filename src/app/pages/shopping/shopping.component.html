@@ -1,0 +1,20 @@
+<!-- <app-caroselofcards [data]="products"></app-caroselofcards>
+
+ <div *ngFor="let category of categories">
+  <h1>{{ category }}</h1>
+  <app-caroselofcards [data]="categorizedProducts[category]"></app-caroselofcards>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <br>
+    @for (item of categories; track $index; let ind=$index) {
+    <h1>{{item}}</h1>
+    <hr><br>
+
+      <app-carosel-card [category]="item"></app-carosel-card>
+
+  }
+  </div>
+</div>
+

@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { BootstrapCard } from '../../interface/bottstrap-card.components';
 import { CardComponent } from "../card/card.component";
 import { MyButtonComponent } from '../my-button/my-button.component';
 import { CommonModule } from '@angular/common';
@@ -7,12 +6,12 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-caroselofcards',
   standalone: true,
-  imports: [MyButtonComponent, CommonModule, CardComponent],
+  imports: [ CommonModule, CardComponent],
   templateUrl: './caroselofcards.component.html',
   styleUrl: './caroselofcards.component.scss'
 })
 export class CaroselofcardsComponent {
-  @Input() data: BootstrapCard[] =[]
+  @Input() data:any;
 
 
 

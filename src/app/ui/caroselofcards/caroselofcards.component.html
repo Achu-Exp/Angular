@@ -5,10 +5,9 @@
   <div class="card-container">
     <app-card
       *ngFor="let item of data; trackBy: trackById"
-      [image]="item.image"
-      [title]="item.name"
-      [description]="item.description"
-    ></app-card>
+      [data]="item"
+      [routeLink]="'/district/'+item.id"
+    ></app-card >
   </div>
 
   <button class="carousel-btn right" (click)="scrollRight()">›</button>

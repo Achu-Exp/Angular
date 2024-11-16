@@ -1,0 +1,24 @@
+<div class="product">
+  <div class="colPro">
+    <img src={{products.image}} alt="" style="max-width: 300px; min-width: 250px; height: 350px;">
+    <div class="rowPro" style="margin: 0;padding: 0;">
+      <h1>{{products.title}}</h1>
+      <p>{{products.description}}</p>
+      <h6>{{products.rating.rate}} | {{products.rating.count}} ratings</h6>
+      <div class="stars">
+
+        <i class="bi bi-star-fill" *ngFor="let _ of [].constructor(getStars(products.rating.rate).full)"></i>
+
+        <i class="bi bi-star-half" *ngIf="getStars(products.rating.rate).half"></i>
+
+        <i class="bi bi-star" *ngFor="let _ of [].constructor(getStars(products.rating.rate).empty)"></i>
+      </div>
+
+
+
+
+      <hr>
+      <h5>$ {{products.price}}</h5>
+    </div>
+  </div>
+</div>

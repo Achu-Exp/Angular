@@ -1,0 +1,15 @@
+<div class="product" >
+  @if (district) {
+  <div class="colPro">
+    <img
+      [src]="district.image"
+      alt="{{district.title}}"
+      style="width: 700px;  height: 350px;">
+    <div class="rowPro" style="margin: 0; padding: 0;">
+      <h1>{{ district.title }}</h1><br><br><br>
+      <p style="font-size: 1.9rem;">{{ district.description }}</p>
+    </div>
+  </div>
+}
+</div>
+

@@ -1,0 +1,18 @@
+<div class="background">
+  <h2>TODO LIST</h2>
+<form [formGroup]="newtodo" (ngSubmit)="onSubmit()">
+  <label for="newtodo">ToDo:</label>
+  <input type="text" id="newtodo" formControlName="addnewtodo" class="form-control" />
+  <button type="submit" class="btn btn-primary mt-3">Add ToDo</button>
+</form>
+
+
+<div class="container col-md-6 mt-4" id="todo-container">
+
+  @for (item of todolist; track $index; let ind=$index )
+  {
+  <app-list [todoitem]="item" (removeItem)="removeAnItem($event)"></app-list>
+
+  }
+</div>
+</div>

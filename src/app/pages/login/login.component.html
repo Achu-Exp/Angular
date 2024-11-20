@@ -1,54 +1,204 @@
 <div class="Registration-form">
-
-
   <form class="container" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <div class="row text-center mb-5">
-      <h1 class="col-12" style="text-align: center;">Register</h1>
-
+      <h1 class="col-12">Register</h1>
     </div>
+
+
     <div class="row g-10">
-      <input class="form-control col" placeholder="First name" formControlName="firstName" />
-      <input class="form-control col" placeholder="Last name" formControlName="lastName" />
+      <div class="col">
+        <input class="form-control" placeholder="First name" formControlName="firstName" />
+        @if (profileForm.get('firstName')?.touched && profileForm.get('firstName')?.invalid) {
+        <div class="text-danger">
+          First Name is required.
+        </div>
 
+        }
+      </div>
+      <div class="col">
+        <input class="form-control" placeholder="Last name" formControlName="lastName" />
+        @if (profileForm.get('lastName')?.touched && profileForm.get('lastName')?.invalid) {
+        <div class="text-danger">
+          Last Name is required.
+        </div>
+        }
+
+      </div>
     </div>
-    <div class="row">
-      <input class="form-control col" placeholder="Email" formControlName="email" />
-      <input class="form-control col" placeholder="Phone" formControlName="phonenumber" />
 
+    <!-- Email and Phone -->
+    <div class="row">
+      <div class="col">
+        <input class="form-control" placeholder="Email" formControlName="email" />
+        @if (profileForm.get('email')?.touched && profileForm.get('email')?.invalid) {
+        <div class="text-danger">
+          @if (profileForm.get('email')?.errors?.['required']) {
+          <span>Email is required.</span>
+          }
+          @if (profileForm.get('email')?.errors?.['email']) {
+          <span>Invalid email address.</span>
+          }
+        </div>
+        }
+
+      </div>
+      <div class="col">
+        <input class="form-control" placeholder="Phone" formControlName="phonenumber" />
+        @if (profileForm.get('phonenumber')?.touched && profileForm.get('phonenumber')?.invalid) {
+        <div class="text-danger">
+          @if (profileForm.get('phonenumber')?.errors?.['required']) {
+          <span>Phone number is required.</span>
+          }
+          @if (profileForm.get('phonenumber')?.errors?.['minlength'] ||
+          profileForm.get('phonenumber')?.errors?.['maxlength']) {
+          <span>
+            Phone number must be 10 digits.
+          </span>
+          }
+
+        </div>
+        }
+
+      </div>
     </div>
+
+    <!-- Gender and Date of Birth -->
     <div class="row">
-
-
-        <select class="form-select col" aria-label="Default select example" formControlName="gender">
-          <option value="" disabled selected> Gender</option>
+      <div class="col">
+        <select class="form-select" formControlName="gender">
+          <option value="" disabled selected>Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Others">Others</option>
         </select>
+        @if (profileForm.get('gender')?.touched && profileForm.get('gender')?.invalid) {
+        <div class="text-danger">
+          Gender is required.
+        </div>
+        }
 
+      </div>
+      <div class="col">
+        <input class="form-control" type="date" formControlName="dob" />
+        @if (profileForm.get('dob')?.touched && profileForm.get('dob')?.invalid) {
+        <div class="text-danger">
+          Date of Birth is required.
+        </div>
+        }
 
-      <input class="form-control col" type="date" placeholder="Dob" formControlName="dob" />
-
+      </div>
     </div>
+
+    <!-- Address -->
     <div class="row">
-      <input class="form-control col" placeholder="Address" formControlName="address" />
+      <div class="col">
+        <input class="form-control" placeholder="Address" formControlName="address" />
+        @if (profileForm.get('address')?.touched && profileForm.get('address')?.invalid) {
+        <div class="text-danger">
+          Address is required.
+        </div>
+        }
 
+      </div>
     </div>
+
+    <!-- Pincode and City -->
     <div class="row">
-      <input (keyup)="pinCheck()" class="form-control col" placeholder="pincode" formControlName="pincode" />
-      <input class="form-control col" placeholder="City" formControlName="city" />
+      <div class="col">
+        <input (keyup)="pinCheck()" class="form-control" placeholder="Pincode" formControlName="pincode" />
+        @if (profileForm.get('pincode')?.touched && profileForm.get('pincode')?.invalid) {
+        <div class="text-danger">
+          @if (profileForm.get('pincode')?.errors?.['required']) {
+          <span>Pincode is required.</span>
+          }
+          @if (profileForm.get('pincode')?.errors?.['minlength']) {
+          <span>Pincode must be 6 digits long.</span>
+          }
+          @if (profileForm.get('pincode')?.errors?.['maxlength']) {
+          <span>Pincode must not exceed 6 digits.</span>
+          }
+        </div>
+        }
 
+      </div>
+      <div class="col">
+        <input class="form-control" placeholder="City" formControlName="city" />
+        @if (profileForm.get('city')?.touched && profileForm.get('city')?.invalid) {
+        <div class="text-danger">
+          City is required.
+        </div>
+        }
+
+      </div>
     </div>
+
+    <!-- District and State -->
     <div class="row">
-      <input class="form-control col" placeholder="District" formControlName="district" />
-      <input class="form-control col" placeholder="State" formControlName="state">
+      <div class="col">
+        <input class="form-control" placeholder="District" formControlName="district" />
+        @if (profileForm.get('district')?.touched && profileForm.get('district')?.invalid) {
+        <div class="text-danger">
+          District is required.
+        </div>
+        }
+
+      </div>
+      <div class="col">
+        <input class="form-control" placeholder="State" formControlName="state" />
+        @if (profileForm.get('state')?.touched && profileForm.get('state')?.invalid) {
+        <div class="text-danger">
+          State is required.
+        </div>
+        }
+
+      </div>
     </div>
 
+    <!-- Password and Repeat Password -->
     <div class="row">
-      <input class="form-control col" type="password" placeholder="Password" formControlName="password" />
-      <input class="form-control col" type="password" placeholder="Repeat password" formControlName="repassword" />
+
+      <div class="col">
+        <input class="form-control" type="password" placeholder="Password" formControlName="password" />
+        @if (profileForm.get('password')?.touched && profileForm.get('password')?.invalid) {
+        <div class="text-danger">
+          @if (profileForm.get('password')?.errors?.['required']) {
+          <span>
+            Password is required.
+          </span>
+          }
+          @if (profileForm.get('password')?.errors?.['pattern']) {
+          <span>
+            Password must contain at least 8 characters
+          </span>
+          }
+
+        </div>
+        }
+
+      </div>
+
+
+      <div class="col">
+        <input class="form-control" type="password" placeholder="Repeat password" formControlName="repassword" />
+        @if (profileForm.get('repassword')?.touched && profileForm.get('repassword')?.invalid) {
+        <div class="text-danger">
+          @if (profileForm.get('repassword')?.errors?.['required']) {
+          <span>
+            Re-Password is required.
+          </span>
+          }
+          @if (profileForm.get('repassword')?.errors?.['pattern']) {
+          <span>
+            Re-Password must contain at least 8 characters
+          </span>
+          }
+
+        </div>
+        }
+
+      </div>
     </div>
 
-    <button class="btn btn-primary" type="submit">Register</button>
+    <button class="btn btn-primary"  [disabled]="profileForm.invalid">Register</button>
   </form>
 </div>

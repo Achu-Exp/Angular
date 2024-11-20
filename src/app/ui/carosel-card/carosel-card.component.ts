@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { CardComponent } from "../card/card.component";
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-carosel-card',
@@ -15,8 +14,6 @@ export class CaroselCardComponent {
 
 
   constructor(public api:ApiService) {}
-
-
 
   customOptions: OwlOptions = {
     loop: true,
@@ -42,7 +39,7 @@ export class CaroselCardComponent {
     },
     nav: true
   }
-
+  @Input() routeLink: string = "";
   @Input() category:string=""
   products:any
 

@@ -5,6 +5,7 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 
 @Component({
@@ -18,21 +19,21 @@ export class LoginComponent {
   constructor(public api: ApiService) {}
 
   profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    dob: new FormControl(''),
-    email: new FormControl(''),
-    address: new FormControl(''),
-    street: new FormControl(''),
-    city: new FormControl(''),
-    district: new FormControl(''),
-    state: new FormControl(''),
-    pincode: new FormControl(''),
-    phonenumber: new FormControl(''),
-    gender: new FormControl(''),
-    password: new FormControl(''),
-    newpassword: new FormControl(''),
+    firstName: new FormControl('',Validators.required),
+    lastName: new FormControl('',Validators.required),
+    dob: new FormControl('',Validators.required),
+    email: new FormControl('',[Validators.required,Validators.email]),
+    address: new FormControl('',Validators.required),
+    city: new FormControl('',Validators.required),
+    district: new FormControl('',Validators.required),
+    state: new FormControl('',Validators.required),
+    pincode: new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(6)]),
+    phonenumber: new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
+    gender: new FormControl('',Validators.required),
+    password: new FormControl('',[Validators.required,Validators.pattern('^.{8,12}$')]),
+    repassword: new FormControl('',[Validators.required,Validators.pattern('^.{8,12}$')]),
   });
+
 
   onSubmit() {
     console.log(this.profileForm.value);

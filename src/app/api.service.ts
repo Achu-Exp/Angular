@@ -1,13 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
+
+  getTodoList(){
+    return this.http.get('https://dummyjson.com/todos')
+  }
 
   getProducts(){
     return this.http.get('https://fakestoreapi.com/products')

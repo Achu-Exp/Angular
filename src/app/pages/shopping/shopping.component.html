@@ -1,9 +1,4 @@
-<!-- <app-caroselofcards [data]="products"></app-caroselofcards>
 
- <div *ngFor="let category of categories">
-  <h1>{{ category }}</h1>
-  <app-caroselofcards [data]="categorizedProducts[category]"></app-caroselofcards>
-</div> -->
 
 <div class="container">
   <div class="row">
@@ -12,7 +7,7 @@
     <h1>{{item}}</h1>
     <hr><br>
 
-      <app-carosel-card [category]="item"></app-carosel-card>
+      <app-carosel-card [category]="item" ></app-carosel-card>
 
   }
   </div>

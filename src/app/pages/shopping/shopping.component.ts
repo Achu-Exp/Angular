@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { CaroselCardComponent } from "../../ui/carosel-card/carosel-card.component";
 
@@ -13,6 +13,7 @@ export class ShoppingComponent {
 
   constructor(public api:ApiService) {}
   categories:[]=[];
+   @Input() category:string=""
 
  ngOnInit(){
   this.api.getCategory().subscribe((res:any) => {

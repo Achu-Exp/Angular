@@ -1,0 +1,14 @@
+<div class="list-item">
+  <input type="checkbox" checked="{{todoitem.completed?'checked':''}}" (change)="onCheckBoxValueChanged()">
+  @if (todoitem.completed)
+  {
+    <h6><s>{{todoitem.todo}}</s></h6>
+  }
+  @else {
+    <h6>{{todoitem.todo}}</h6>
+  }
+<button (click)="onDelete()"><i class="fa-solid fa-trash"></i></button>
+</div>
+
+
+

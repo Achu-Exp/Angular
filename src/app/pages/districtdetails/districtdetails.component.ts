@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { ActivatedRoute } from '@angular/router';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-districtdetails',
   standalone: true,
-  imports: [NgIf],
+  imports: [],
   templateUrl: './districtdetails.component.html',
   styleUrl: './districtdetails.component.scss'
 })
@@ -21,7 +20,7 @@ district:any
 
   if (id) {
     this.api.getDistricts(id).subscribe((data: any) => {
-      this.district = data[0]; 
+      this.district = data[0];
       console.log(this.district, 'District Details');
     });
   }

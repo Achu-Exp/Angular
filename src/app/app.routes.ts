@@ -6,6 +6,7 @@ import { ShoppingComponent } from './pages/shopping/shopping.component';
 import { ProdutpageComponent } from './pages/produtpage/produtpage.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DistrictdetailsComponent } from './pages/districtdetails/districtdetails.component';
+import { TodoComponent } from './pages/todo/todo.component';
 
 export const routes: Routes = [
   {
@@ -29,6 +30,9 @@ export const routes: Routes = [
   {
     path:"district/:id",component:DistrictdetailsComponent
   },
+  {
+    path:"todo",component:TodoComponent
+  }
 
 ];
 

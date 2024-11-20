@@ -4,11 +4,10 @@ import { ListComponent } from "../../ui/list/list.component";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-todo',
-  standalone: true,
-  imports: [ListComponent,FormsModule,ReactiveFormsModule],
-  templateUrl: './todo.component.html',
-  styleUrl: './todo.component.scss'
+    selector: 'app-todo',
+    imports: [ListComponent, FormsModule, ReactiveFormsModule],
+    templateUrl: './todo.component.html',
+    styleUrl: './todo.component.scss'
 })
 export class TodoComponent {
 

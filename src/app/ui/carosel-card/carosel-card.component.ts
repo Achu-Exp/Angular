@@ -4,11 +4,10 @@ import { CardComponent } from "../card/card.component";
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
-  selector: 'app-carosel-card',
-  standalone: true,
-  imports: [CardComponent,CarouselModule],
-  templateUrl: './carosel-card.component.html',
-  styleUrl: './carosel-card.component.scss'
+    selector: 'app-carosel-card',
+    imports: [CardComponent, CarouselModule],
+    templateUrl: './carosel-card.component.html',
+    styleUrl: './carosel-card.component.scss'
 })
 export class CaroselCardComponent {
 

@@ -3,11 +3,10 @@ import { NgClass, SlicePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-card',
-  standalone: true,
-  imports: [SlicePipe,NgClass,RouterLink],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+    selector: 'app-card',
+    imports: [SlicePipe, NgClass, RouterLink],
+    templateUrl: './card.component.html',
+    styleUrl: './card.component.scss'
 })
 export class CardComponent {
   @Input() data:any;

@@ -4,11 +4,10 @@ import { MyButtonComponent } from '../my-button/my-button.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-caroselofcards',
-  standalone: true,
-  imports: [ CommonModule, CardComponent],
-  templateUrl: './caroselofcards.component.html',
-  styleUrl: './caroselofcards.component.scss'
+    selector: 'app-caroselofcards',
+    imports: [CommonModule, CardComponent],
+    templateUrl: './caroselofcards.component.html',
+    styleUrl: './caroselofcards.component.scss'
 })
 export class CaroselofcardsComponent {
   @Input() data:any;

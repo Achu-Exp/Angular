@@ -3,11 +3,10 @@ import { ApiService } from '../../api.service';
 import { CaroselCardComponent } from "../../ui/carosel-card/carosel-card.component";
 
 @Component({
-  selector: 'app-shopping',
-  standalone: true,
-  imports: [CaroselCardComponent],
-  templateUrl: './shopping.component.html',
-  styleUrl: './shopping.component.scss'
+    selector: 'app-shopping',
+    imports: [CaroselCardComponent],
+    templateUrl: './shopping.component.html',
+    styleUrl: './shopping.component.scss'
 })
 export class ShoppingComponent {
 

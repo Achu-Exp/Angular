@@ -3,11 +3,10 @@ import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-my-button',
-  standalone: true,
-  imports: [CommonModule,RouterLink],
-  templateUrl: './my-button.component.html',
-  styleUrl: './my-button.component.scss'
+    selector: 'app-my-button',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './my-button.component.html',
+    styleUrl: './my-button.component.scss'
 })
 export class MyButtonComponent {
 @Input() title:string = 'Get My APP'

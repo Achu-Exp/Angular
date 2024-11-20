@@ -4,11 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-produtpage',
-  standalone: true,
-  imports: [NgFor,NgIf],
-  templateUrl: './produtpage.component.html',
-  styleUrl: './produtpage.component.scss'
+    selector: 'app-produtpage',
+    imports: [NgFor, NgIf],
+    templateUrl: './produtpage.component.html',
+    styleUrl: './produtpage.component.scss'
 })
 export class ProdutpageComponent {
 products:any

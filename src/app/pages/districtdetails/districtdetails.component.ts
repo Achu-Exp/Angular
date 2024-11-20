@@ -3,11 +3,10 @@ import { ApiService } from '../../api.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-districtdetails',
-  standalone: true,
-  imports: [],
-  templateUrl: './districtdetails.component.html',
-  styleUrl: './districtdetails.component.scss'
+    selector: 'app-districtdetails',
+    imports: [],
+    templateUrl: './districtdetails.component.html',
+    styleUrl: './districtdetails.component.scss'
 })
 export class DistrictdetailsComponent {
 

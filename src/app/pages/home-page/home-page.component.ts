@@ -7,11 +7,10 @@ import { CardComponent } from "../../ui/card/card.component";
 
 
 @Component({
-  selector: 'app-home-page',
-  standalone: true,
-  imports: [MyCaroselComponent, MyDescriptionComponent, CaroselofcardsComponent, CardComponent],
-  templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss'
+    selector: 'app-home-page',
+    imports: [MyCaroselComponent, MyDescriptionComponent, CaroselofcardsComponent, CardComponent],
+    templateUrl: './home-page.component.html',
+    styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
   item:BootstrapCarosel[] = [

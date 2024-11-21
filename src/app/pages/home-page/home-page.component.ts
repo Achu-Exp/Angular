@@ -3,12 +3,11 @@ import { MyCaroselComponent } from "../../ui/my-carosel/my-carosel.component";
 import { MyDescriptionComponent } from "../../ui/my-description/my-description.component";
 import { CaroselofcardsComponent } from "../../ui/caroselofcards/caroselofcards.component";
 import { BootstrapCard, BootstrapCarosel } from '../../interface/bottstrap-card.components';
-import { CardComponent } from "../../ui/card/card.component";
 
 
 @Component({
     selector: 'app-home-page',
-    imports: [MyCaroselComponent, MyDescriptionComponent, CaroselofcardsComponent, CardComponent],
+    imports: [MyCaroselComponent, MyDescriptionComponent, CaroselofcardsComponent],
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.scss'
 })

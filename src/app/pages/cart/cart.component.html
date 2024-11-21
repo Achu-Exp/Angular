@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Your Cart</h2>
+  <ul style="list-style-type: none; padding: 0">
+    @for (product of productList.cart(); track product.id){
+    <div>
+      <li class="card">
+        <div class="card-content">
+          <img [src]="product.image" alt="{{ product.title }}" class="product-image" />
+          <div class="product-details">
+            <h4>{{ product.title }}</h4>
+            <p>$ {{ product.price }}</p>
+          </div>
+        </div>
+        <button class="remove-button" (click)="productList.removeFromCart(product.id)">
+          <i class="fa fa-trash"></i>
+        </button>
+        <button class="buy-now-button">Buy Now</button>
+      </li>
+      <hr class="separator" />
+    </div>
+    }
+  </ul>
+</div>

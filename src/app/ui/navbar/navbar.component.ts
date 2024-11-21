@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { GlobalStateService } from '../../global-state.service';
 
 @Component({
     selector: 'app-navbar',
@@ -8,5 +9,6 @@ import { RouterLink } from '@angular/router';
     styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  constructor(public cartItems:GlobalStateService) {}
 
 }

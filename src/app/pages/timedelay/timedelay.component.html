@@ -1,0 +1,24 @@
+<div class="container">
+  <div>
+    <label for="exampleColorInput" class="form-label">Color Picker</label>
+    <input
+      type="color"
+      class="form-control form-control-color"
+      id="exampleColorInput"
+      [formControl]="colorControl"
+      title="Choose your color"
+    />
+
+    <h1 [style.color]="paragraphColor">Hello</h1>
+
+    <button type="button" class="btn btn-primary mt-2">Submit</button>
+
+  </div>
+
+  <br><br><br><br><br>
+  <h1>Total Todos: {{counterSet.counter()}}</h1>
+
+</div>
+
+
+

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { fromEvent, map, throttleTime } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +45,10 @@ export class ApiService {
       })
     );
   }
+ getSubmittDelay(){
+  const clicks = fromEvent(document, 'click');
+  const result = clicks.pipe(throttleTime(1000));
 
+  result.subscribe(x => console.log(x));
+ }
 }

@@ -2,6 +2,7 @@ import { ApiService } from './../../api.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
+import { GlobalStateService } from '../../global-state.service';
 
 @Component({
     selector: 'app-produtpage',
@@ -12,7 +13,8 @@ import { NgFor, NgIf } from '@angular/common';
 export class ProdutpageComponent {
 products:any
 
-  constructor(private activted_route:ActivatedRoute,public api:ApiService) {}
+  constructor(private activted_route:ActivatedRoute,public api:ApiService,public ProductSet:GlobalStateService) {}
+
 
   ngOnInit() {
   let id = this.activted_route.snapshot.paramMap.get('id');
@@ -20,9 +22,6 @@ products:any
 
   this.api.getProdutsByid(id).subscribe((res) => {
   this.products=res;
-
-
-
   });
 }
 

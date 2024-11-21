@@ -1,17 +1,27 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="home">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" routerLink="">Home</a>
-        <a class="nav-link" routerLink="about">About</a>
-        <a class="nav-link" routerLink="contact">Contact</a>
         <a class="nav-link" routerLink="shopping">Shopping</a>
-        <a class="nav-link" routerLink="login">LogIn</a>
+        <a class="nav-link" routerLink="cart">
+          Cart
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ cartItems.cart().length }}
+            <span class="visually-hidden">Cart items count</span>
+          </span>
+        </a>
+
+        <a class="nav-link" routerLink="login">Register</a>
         <a class="nav-link" routerLink="todo">Todo</a>
+        <a class="nav-link" routerLink="time">New</a>
+        <a class="nav-link" routerLink="signal">Signal</a>
+
       </div>
     </div>
   </div>

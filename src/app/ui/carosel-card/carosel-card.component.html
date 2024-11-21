@@ -2,7 +2,7 @@
 
   @for (item of products; track $index; let ind=$index) {
     <ng-template carouselSlide [id]="item.id">
-     <app-card [data]="item" [showBorder]='true' [routeLink]="'/products/'+item.id"></app-card>
+     <app-card [data]="item" [showBorder]='true'[showAddToCart]="true" [routeLink]="'/products/'+item.id"></app-card>
     </ng-template>
   }
 

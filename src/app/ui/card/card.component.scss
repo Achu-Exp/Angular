@@ -48,3 +48,26 @@
   align-self: flex-start;
   margin-top: auto;
 }
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-buttons .btn {
+  flex: 1;
+  text-align: center;
+}
+.button-common {
+  width: 120px;
+  height: 40px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+
